@@ -2,6 +2,7 @@
 # readyomics <img src="man/figures/logo.png" align="right" height="130" alt="" />
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/lmartinezgili/readyomics/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/lmartinezgili/readyomics/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 readyomics provides a pipeline for formatting, analyzing, and visualizing omics 
