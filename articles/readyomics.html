@@ -6,6 +6,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>readyomics • readyomics</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" sizes="any" href="../favicon.ico">
+<link rel="manifest" href="../site.webmanifest">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
@@ -675,7 +680,7 @@ analysis.</p>
 <span><span class="co">#&gt; standard scaling of predictors</span></span>
 <span><span class="co">#&gt;       R2X(cum) pre ort</span></span>
 <span><span class="co">#&gt; Total    0.533   9   0</span></span></code></pre></div>
-<p><img src="readyomics_files/figure-html/unnamed-chunk-12-1.png" width="700"></p>
+<p><img src="readyomics_files/figure-html/unnamed-chunk-12-1.png" alt="Figure panel with 4 plots, principal components variance percentage (upper-left), observation diagnostics for outliers (upper-right), scores plot (lower-left), loadings plot (lower right)." width="700"></p>
 <p>By default, <code><a href="../reference/mva.html">mva()</a></code> will show a PCA diagnostics plot,
 which is very useful to examine potential outliers, batch effects and
 clusters related to the groups of interest.</p>
@@ -685,7 +690,7 @@ case color-coded by the variable <code>groups_liver</code> as we
 indicated:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pca</span><span class="op">$</span><span class="va">scores_plot</span></span></code></pre></div>
-<p><img src="readyomics_files/figure-html/unnamed-chunk-13-1.png" width="700"></p>
+<p><img src="readyomics_files/figure-html/unnamed-chunk-13-1.png" alt="Scores plot color-coded by groups_liver class." width="700"></p>
 <p>Because the plot is generated using ggplot2, it can be further
 tweaked using ggplot2 functions before export.</p>
 </div>
@@ -1893,23 +1898,23 @@ once by simply running:</p>
 <span><span class="co">#&gt; (`geom_text_repel()`).</span></span>
 <span><span class="co">#&gt; Warning: ggrepel: 7 unlabeled data points (too many overlaps). Consider</span></span>
 <span><span class="co">#&gt; increasing max.overlaps</span></span></code></pre></div>
-<p><img src="readyomics_files/figure-html/unnamed-chunk-34-1.png" width="700"></p>
+<p><img src="readyomics_files/figure-html/unnamed-chunk-34-1.png" alt="Plots for model coefficients (volcano plot, heatmap, points) and plots for  significant features across study groups (boxplot, violin and ridges plots)." width="700"></p>
 <pre><code><span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $coeff_heatmap</span></span></code></pre>
-<p><img src="readyomics_files/figure-html/unnamed-chunk-34-2.png" width="700"></p>
+<p><img src="readyomics_files/figure-html/unnamed-chunk-34-2.png" alt="Plots for model coefficients (volcano plot, heatmap, points) and plots for  significant features across study groups (boxplot, violin and ridges plots)." width="700"></p>
 <pre><code><span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $coeff_point</span></span></code></pre>
-<p><img src="readyomics_files/figure-html/unnamed-chunk-34-3.png" width="700"></p>
+<p><img src="readyomics_files/figure-html/unnamed-chunk-34-3.png" alt="Plots for model coefficients (volcano plot, heatmap, points) and plots for  significant features across study groups (boxplot, violin and ridges plots)." width="700"></p>
 <pre><code><span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $feat_boxplot</span></span></code></pre>
-<p><img src="readyomics_files/figure-html/unnamed-chunk-34-4.png" width="700"></p>
+<p><img src="readyomics_files/figure-html/unnamed-chunk-34-4.png" alt="Plots for model coefficients (volcano plot, heatmap, points) and plots for  significant features across study groups (boxplot, violin and ridges plots)." width="700"></p>
 <pre><code><span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $feat_violin</span></span></code></pre>
-<p><img src="readyomics_files/figure-html/unnamed-chunk-34-5.png" width="700"></p>
+<p><img src="readyomics_files/figure-html/unnamed-chunk-34-5.png" alt="Plots for model coefficients (volcano plot, heatmap, points) and plots for  significant features across study groups (boxplot, violin and ridges plots)." width="700"></p>
 <pre><code><span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $feat_ridge</span></span>
 <span><span class="co">#&gt; Picking joint bandwidth of 0.471</span></span></code></pre>
-<p><img src="readyomics_files/figure-html/unnamed-chunk-34-6.png" width="700"></p>
+<p><img src="readyomics_files/figure-html/unnamed-chunk-34-6.png" alt="Plots for model coefficients (volcano plot, heatmap, points) and plots for  significant features across study groups (boxplot, violin and ridges plots)." width="700"></p>
 <p>Because plots are generated with ggplot2, they can easily be further
 customized.</p>
 </div>
