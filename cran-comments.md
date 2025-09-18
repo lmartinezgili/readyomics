@@ -2,8 +2,6 @@
 
 0 errors | 0 warnings | 0 notes
 
-## Minor fix for macOS
+## Compatibility with ggplot2 4.0.0 release
 
-Fixed documentation errors in macOS flavor checks.
-
-`check_mac_release()` Status: OK
+Removed deprecated `draw_quantiles` from `ggplot2::geom_violin()`.
