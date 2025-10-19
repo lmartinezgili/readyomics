@@ -2,6 +2,6 @@
 
 0 errors | 0 warnings | 0 notes
 
-## Compatibility with ggplot2 4.0.0 release
+## Improvements to `adjust_pval()`
 
-Removed deprecated `draw_quantiles` from `ggplot2::geom_violin()`.
+Added arguments for `IHW::ihw()` and `qvalue::qvalue()` parameters.

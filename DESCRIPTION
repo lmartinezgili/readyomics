@@ -1,7 +1,7 @@
 Package: readyomics
 Type: Package
 Title: Ready-to-Use Omics Formatting, Analysis, and Visualization Pipeline
-Version: 0.1.2
+Version: 0.2.0
 Authors@R: 
     c(
       person(given = "Laura", 
