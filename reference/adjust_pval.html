@@ -11,7 +11,7 @@ coefficient and likelihood ratio test (LRT) P-values."><meta property="og:image"
 
     <a class="navbar-brand me-2" href="../index.html">readyomics</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@ coefficient and likelihood ratio test (LRT) P-values."><meta property="og:image"
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Adjust P-values in a <code>dana</code> object</h1>
-      <small class="dont-index">Source: <a href="https://github.com/lmartinezgili/readyomics/blob/v0.1.2/R/utils_analysis.R" class="external-link"><code>R/utils_analysis.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/lmartinezgili/readyomics/blob/master/R/utils_analysis.R" class="external-link"><code>R/utils_analysis.R</code></a></small>
       <div class="d-none name"><code>adjust_pval.Rd</code></div>
     </div>
 
@@ -48,12 +48,13 @@ coefficient and likelihood ratio test (LRT) P-values.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">adjust_pval</span><span class="op">(</span></span>
 <span>  <span class="va">dana_obj</span>,</span>
 <span>  padj_by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"all"</span>, <span class="st">"terms"</span><span class="op">)</span>,</span>
-<span>  padj_method <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"BH"</span>, <span class="st">"bonferroni"</span>, <span class="st">"BY"</span>, <span class="st">"fdr"</span>, <span class="st">"hochberg"</span>, <span class="st">"holm"</span>, <span class="st">"hommel"</span>, <span class="st">"IHW"</span>,</span>
-<span>    <span class="st">"storey"</span><span class="op">)</span>,</span>
-<span>  padj_method_LRT <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"BH"</span>, <span class="st">"bonferroni"</span>, <span class="st">"BY"</span>, <span class="st">"fdr"</span>, <span class="st">"hochberg"</span>, <span class="st">"holm"</span>, <span class="st">"hommel"</span>,</span>
-<span>    <span class="st">"IHW"</span>, <span class="st">"storey"</span><span class="op">)</span>,</span>
-<span>  verbose <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>  <span class="va">...</span></span>
+<span>  padj_method <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  padj_method_LRT <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  ihw_covar <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  ihw_covar_id <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  ihw_args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  storey_args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -81,12 +82,27 @@ LRT tests. Defaults to <code>"BH"</code>. P-values from LRT tests will always be
 independently for each LRT term.</p></dd>
 
 
+<dt id="arg-ihw-covar">ihw_covar<a class="anchor" aria-label="anchor" href="#arg-ihw-covar"></a></dt>
+<dd><p>Data frame containing covariable(s) used for <code><a href="https://rdrr.io/pkg/IHW/man/ihw.default.html" class="external-link">IHW::ihw()</a></code>. Must contain
+a <code>"feat_id"</code> column, matching <code>dana</code> object <code>"feat_id"</code> labels.</p></dd>
+
+
+<dt id="arg-ihw-covar-id">ihw_covar_id<a class="anchor" aria-label="anchor" href="#arg-ihw-covar-id"></a></dt>
+<dd><p>Character string. Column name in <code>ihw_covar</code> used as <code>covariates</code>
+argument in <code><a href="https://rdrr.io/pkg/IHW/man/ihw.default.html" class="external-link">IHW::ihw()</a></code>.</p></dd>
+
+
+<dt id="arg-ihw-args">ihw_args<a class="anchor" aria-label="anchor" href="#arg-ihw-args"></a></dt>
+<dd><p>Named list. Additional arguments passed to <code><a href="https://rdrr.io/pkg/IHW/man/ihw.default.html" class="external-link">IHW::ihw()</a></code>. Do not provide
+<code>covariates</code> argument, as it will be obtained from <code>ihw_covar</code>.</p></dd>
+
+
+<dt id="arg-storey-args">storey_args<a class="anchor" aria-label="anchor" href="#arg-storey-args"></a></dt>
+<dd><p>Named list. Additional arguments passed to <code><a href="https://rdrr.io/pkg/qvalue/man/qvalue.html" class="external-link">qvalue::qvalue()</a></code>.</p></dd>
+
+
 <dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
 <dd><p>Logical. Whether to print informative messages. Defaults to <code>TRUE</code>.</p></dd>
-
-
-<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
-<dd><p>Additional arguments passed to <code><a href="https://rdrr.io/pkg/IHW/man/ihw.default.html" class="external-link">IHW::ihw()</a></code> or <code><a href="https://rdrr.io/pkg/qvalue/man/qvalue.html" class="external-link">qvalue::qvalue()</a></code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -104,7 +120,7 @@ for each adjusted P-value method applied (e.g. <code>padj_BH</code>, <code>padj_
     <div class="dont-index">
 <ul><li><p><code><a href="dana.html">dana()</a></code> for fitting differential analysis models on omics datasets.</p></li>
 <li><p><code><a href="https://rdrr.io/pkg/IHW/man/ihw.default.html" class="external-link">IHW::ihw()</a></code> for inverted hypothesis weighting method details.</p></li>
-<li><p><code><a href="https://rdrr.io/pkg/qvalue/man/qvalue.html" class="external-link">qvalue::qvalue()</a></code> for qvalue method details.</p></li>
+<li><p><code><a href="https://rdrr.io/pkg/qvalue/man/qvalue.html" class="external-link">qvalue::qvalue()</a></code> for Storey's qvalue method details.</p></li>
 </ul></div>
     </div>
 
@@ -145,8 +161,7 @@ for each adjusted P-value method applied (e.g. <code>padj_BH</code>, <code>padj_
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Add adjusted P-values</span></span></span>
 <span class="r-in"><span><span class="va">dana_obj</span> <span class="op">&lt;-</span> <span class="va">dana_obj</span> <span class="op">|&gt;</span></span></span>
-<span class="r-in"><span>  <span class="fu">adjust_pval</span><span class="op">(</span><span class="va">dana_obj</span>,</span></span>
-<span class="r-in"><span>              padj_method <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"BH"</span>, <span class="st">"bonferroni"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  <span class="fu">adjust_pval</span><span class="op">(</span>padj_method <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"BH"</span>, <span class="st">"bonferroni"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>              padj_method_LRT <span class="op">=</span> <span class="cn">NULL</span>,</span></span>
 <span class="r-in"><span>              padj_by <span class="op">=</span> <span class="st">"terms"</span>,</span></span>
 <span class="r-in"><span>              verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
