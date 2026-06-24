@@ -2,6 +2,6 @@
 
 0 errors | 0 warnings | 0 notes
 
-## Improvements to `adjust_pval()`
+## Improvements to `ready_plots()`
 
-Added arguments for `IHW::ihw()` and `qvalue::qvalue()` parameters.
+Return `dana` object with empty plots list when no significant hits.

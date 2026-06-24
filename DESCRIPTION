@@ -1,7 +1,7 @@
 Package: readyomics
 Type: Package
 Title: Ready-to-Use Omics Formatting, Analysis, and Visualization Pipeline
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: 
     c(
       person(given = "Laura", 
@@ -19,7 +19,6 @@ Description:
     with customizable components for statistical modeling.
 License: MIT + file LICENSE
 Encoding: UTF-8
-RoxygenNote: 7.3.3
 Depends:
     R (>= 4.1.0)
 Imports:
@@ -50,6 +49,7 @@ Suggests:
     progressr,
     purrr,
     qvalue,
+    reformulas,
     rmarkdown,
     ropls,
     scales,
@@ -59,3 +59,4 @@ BugReports: https://github.com/lmartinezgili/readyomics/issues
 URL: https://lmartinezgili.github.io/readyomics/, https://github.com/lmartinezgili/readyomics
 Config/testthat/edition: 3
 VignetteBuilder: knitr
+Config/roxygen2/version: 8.0.0
