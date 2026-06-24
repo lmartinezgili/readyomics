@@ -598,8 +598,7 @@ dana_asv <- dana_asv |>
               sdata_var = "groups_liver", # Grouping variable for individual feature plots
               group_colours = c(FL = "#4daf4a", # Optional color customization
                                 FL_HS = "#377eb8"))
-#> Error in `ready_plots()`:
-#> ! No significant results at selected 0.1 significance threshold.
+#> Warning in ready_plots(dana_asv, term_name = "groups_liver", pval_match = "groups_liver_LRT", : No significant results at selected 0.1 significance threshold. No coefficient or feature plots will be generated.
 ```
 
 In our example, no features were significant after multiple comparison

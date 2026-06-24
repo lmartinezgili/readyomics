@@ -25,7 +25,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">readyomics</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -1870,8 +1870,7 @@ but plots for specific features can be requested with
 <span>              sdata_var <span class="op">=</span> <span class="st">"groups_liver"</span>, <span class="co"># Grouping variable for individual feature plots</span></span>
 <span>              group_colours <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>FL <span class="op">=</span> <span class="st">"#4daf4a"</span>, <span class="co"># Optional color customization</span></span>
 <span>                                FL_HS <span class="op">=</span> <span class="st">"#377eb8"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;"> in `ready_plots()`:</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> No significant results at selected 0.1 significance threshold.</span></span></code></pre></div>
+<span><span class="co">#&gt; Warning in ready_plots(dana_asv, term_name = "groups_liver", pval_match = "groups_liver_LRT", : No significant results at selected 0.1 significance threshold. No coefficient or feature plots will be generated.</span></span></code></pre></div>
 <p>In our example, no features were significant after multiple
 comparison correction. This prompts an error message from
 <code><a href="../reference/ready_plots.html">ready_plots()</a></code> which halts execution. This is somewhat

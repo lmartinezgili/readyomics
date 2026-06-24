@@ -130,7 +130,7 @@ A named `list` with three elements:
   [`vegan::vegdist()`](https://vegandevs.github.io/vegan/reference/vegdist.html)
   for information on available distances.
 
-- [`vegan::adonis2()`](https://vegandevs.github.io/vegan/reference/vegan-defunct.html)
+- [`vegan::adonis2()`](https://vegandevs.github.io/vegan/reference/adonis.html)
   and
   [`permute::shuffleSet()`](https://rdrr.io/pkg/permute/man/shuffleSet.html)
   for control options and details.

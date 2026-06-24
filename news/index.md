@@ -1,5 +1,11 @@
 # Changelog
 
+## readyomics 0.2.1
+
+- [`ready_plots()`](https://lmartinezgili.github.io/readyomics/reference/ready_plots.md)
+  returns empty plot list instead of error when no significant results
+  found.
+
 ## readyomics 0.2.0
 
 CRAN release: 2025-10-20
