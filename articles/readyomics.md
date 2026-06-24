@@ -591,7 +591,7 @@ publication-ready plots:
 
 ``` r
 
-# Generates error due to lack of significant features:
+# Generates warning due to lack of significant features:
 dana_asv <- dana_asv |>
   ready_plots(term_name = "groups_liver", # Formula fit term of interest
               pval_match = "groups_liver_LRT", # LRT adjusted P values will be used
@@ -602,10 +602,11 @@ dana_asv <- dana_asv |>
 ```
 
 In our example, no features were significant after multiple comparison
-correction. This prompts an error message from
+correction. This prompts a warning message from
 [`ready_plots()`](https://lmartinezgili.github.io/readyomics/reference/ready_plots.md)
-which halts execution. This is somewhat expected as we are using a small
-portion of the original dataset as a toy example.
+which returns the `dana` object with an empty plots list. This is
+somewhat expected as we are using a small portion of the original
+dataset as a toy example.
 
 A formal analysis would end here, concluding that the null hypothesis
 could not be rejected. In our case, we will use the nominal P value to

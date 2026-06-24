@@ -1863,7 +1863,7 @@ but plots for specific features can be requested with
 <code>X_colnames</code> parameter).</li>
 </ul>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Generates error due to lack of significant features:</span></span>
+<code class="sourceCode R"><span><span class="co"># Generates warning due to lack of significant features:</span></span>
 <span><span class="va">dana_asv</span> <span class="op">&lt;-</span> <span class="va">dana_asv</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="../reference/ready_plots.html">ready_plots</a></span><span class="op">(</span>term_name <span class="op">=</span> <span class="st">"groups_liver"</span>, <span class="co"># Formula fit term of interest</span></span>
 <span>              pval_match <span class="op">=</span> <span class="st">"groups_liver_LRT"</span>, <span class="co"># LRT adjusted P values will be used</span></span>
@@ -1872,10 +1872,10 @@ but plots for specific features can be requested with
 <span>                                FL_HS <span class="op">=</span> <span class="st">"#377eb8"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning in ready_plots(dana_asv, term_name = "groups_liver", pval_match = "groups_liver_LRT", : No significant results at selected 0.1 significance threshold. No coefficient or feature plots will be generated.</span></span></code></pre></div>
 <p>In our example, no features were significant after multiple
-comparison correction. This prompts an error message from
-<code><a href="../reference/ready_plots.html">ready_plots()</a></code> which halts execution. This is somewhat
-expected as we are using a small portion of the original dataset as a
-toy example.</p>
+comparison correction. This prompts a warning message from
+<code><a href="../reference/ready_plots.html">ready_plots()</a></code> which returns the <code>dana</code> object
+with an empty plots list. This is somewhat expected as we are using a
+small portion of the original dataset as a toy example.</p>
 <p>A formal analysis would end here, concluding that the null hypothesis
 could not be rejected. In our case, we will use the nominal P value to
 showcase the <code><a href="../reference/ready_plots.html">ready_plots()</a></code> functionality.</p>
