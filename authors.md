@@ -7,7 +7,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/lmartinezgili/readyomics/blob/master/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/lmartinezgili/readyomics/blob/v0.2.1/DESCRIPTION)
 
 Martinez-Gili L (2026). *readyomics: Ready-to-Use Omics Formatting,
 Analysis, and Visualization Pipeline*. R package version 0.2.1,
